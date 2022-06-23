@@ -67,11 +67,12 @@ class AutoScorer {
     })
     const data = refresh.data as string
 
-    if (!data.match('')) {
+    if (!data.match(this.username)) {
       log(`Refresh failed: ${this.username}`)
       return false
     }
     else {
+      this.cookies.update(refresh.headers['set-cookie'])
       log(`Refresh success: ${this.username}`)
       return true
     }
