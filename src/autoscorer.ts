@@ -34,7 +34,7 @@ class AutoScorer {
   }
 
   get loginData(): string {
-    return `username=${this.username}&password=${this.password}`
+    return `username=${encodeURI(this.username)}&password=${this.password}`
   }
 
   async login(): Promise<void> {
