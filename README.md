@@ -1,2 +1,3 @@
 # s1-autoscore
-S1 挂分器
+
+Get S1 forum points 24/7.

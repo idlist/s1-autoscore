@@ -1,0 +1,12 @@
+# 多久模拟一次刷新，单位为秒
+#interval: 300
+
+# 强制重新登陆的时限，单位为秒
+#restartThreshold: 21_600
+
+# 账号密码信息，可以提供多个
+accounts:
+  - username: 冷无缺巨魔
+    password: youknowwhat
+  - username: 扣鹅专用小号
+    password: goushunb
