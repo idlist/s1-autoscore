@@ -7,6 +7,12 @@ class CookiesPool {
     this.cookies = {}
   }
 
+  reset() {
+    this.cookies = {}
+
+    return this
+  }
+
   update(rawCookies: string[] = []) {
     rawCookies.forEach((cookie) => {
       const item = cookie.split(';')[0]
@@ -14,6 +20,8 @@ class CookiesPool {
       const parsedKey = key.replace(new RegExp(`^${this.prefix}`), '')
       this.cookies[parsedKey] = value
     })
+
+    return this
   }
 
   serialize() {

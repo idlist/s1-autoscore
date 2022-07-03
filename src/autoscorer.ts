@@ -53,7 +53,7 @@ class AutoScorer {
 
     this.loginTime = Date.now()
     this.cookies.prefix = login.data.Variables.cookiepre
-    this.cookies.update(login.headers['set-cookie'])
+    this.cookies.reset().update(login.headers['set-cookie'])
     log(`Login: ${this.username}`)
   }
 
