@@ -51,10 +51,15 @@ class AutoScorer {
       data: this.loginData,
     })
 
-    this.loginTime = Date.now()
-    this.cookies.prefix = login.data.Variables.cookiepre
-    this.cookies.reset().update(login.headers['set-cookie'])
-    log(`Login: ${this.username}`)
+    try {
+      this.loginTime = Date.now()
+      this.cookies.prefix = login.data.Variables.cookiepre
+      this.cookies.reset().update(login.headers['set-cookie'])
+      log(`Login: ${this.username}`)
+    } catch {
+      log(`Login for ${this.username} failed, retry...`)
+      return await this.login()
+    }
   }
 
   async refresh(): Promise<boolean> {
